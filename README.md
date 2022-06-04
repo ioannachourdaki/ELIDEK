@@ -8,6 +8,8 @@
 
 ## Αναλυτικά βήματα εγκατάστασης εφαρμογής
 
+Η εφαρμογή αναπτύχθηκε για λειτουργικό σύστημα Linux (ο χρήστης πρέπει να έχει sudo privileges)
+
 #### Aναλυτικές οδηγίες εγκατάστασης του LAMP stack μπορείτε να βρείτε στον παρακάτω σύνδεσμο:
 https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-ubuntu-20-04
  
