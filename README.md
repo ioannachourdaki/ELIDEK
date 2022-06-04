@@ -24,6 +24,6 @@ mysql> source db_directory/dummy_data.sql
 
 ## Apache localhost configuration
 
-Τελευταίο βήμα πριν την εκτέλεση της εφαρμογής είναι η αντιγραφή όλων των αρχείων του φακέλου web_app (github repository) στο directory ```/var/www/html``` Εάν υπάρχει αρχείο index.php πριν την αντιγραφή, πρέπει να φροντίσουμε να το αντικαταστήσουμε από το καινούριο index.php (Αν υπάρχει αρχείο index.html πρέπει να απομακρυνθεί από το συγκεκριμένο directory)
+Τελευταίο βήμα πριν την εκτέλεση της εφαρμογής είναι η αντιγραφή όλων των αρχείων του φακέλου web_app (github repository) στο directory ```/var/www/html``` Εάν υπάρχει αρχείο index.php στο συγκεκριμένο directory πριν την αντιγραφή, πρέπει να φροντίσουμε να το αντικαταστήσουμε με το καινούριο index.php (Αν υπάρχει αρχείο index.html πρέπει να απομακρυνθεί από το συγκεκριμένο directory)
 
 
