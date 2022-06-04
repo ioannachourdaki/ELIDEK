@@ -1,3 +1,5 @@
+/* ANSWERS TO QUESTIONS 3.1 - 3.8 */
+
 /* 3.1 - find researchers */
 
 SELECT r.first_name as 'First Name', r.last_name as 'Last Name'
