@@ -2,8 +2,8 @@
 
    function OpenCon(){
       $dbhost = "localhost";
-      $dbuser = "elidek_user";
-      $dbpass = "elidek_password";
+      $dbuser = "root";
+      $dbpass = "root";
       $db = "elidek_db";
 
       $conn = new mysqli($dbhost, $dbuser, $dbpass,$db) or die("Connect failed: %s\n". $conn -> error);
