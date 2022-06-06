@@ -54,9 +54,15 @@ function set_deliverable(str) {
   $organization = $_REQUEST['organization'];
   $evaluator = $_REQUEST['evaluator'];
   $supervisor = $_REQUEST['supervisor'];
-
+  $field_flag = 0;
+  foreach ($_REQUEST['fields'] as $f) {
+    if(!empty($f)){
+       $field_flag = 1;
+       break;
+     }
+  }
   $conn = OpenCon();
-  if(!empty($title) && !empty($ammount) && !empty($start_date) && !empty($end_date) && !empty($grade_date) && !empty($organization) && !empty($executive) && !empty($program)){
+  if(!empty($title) && !empty($ammount) && !empty($start_date) && !empty($end_date) && !empty($grade_date) && !empty($organization) && ($field_flag==1) && !empty($executive) && !empty($program)){
   $ins_query = "INSERT INTO project (title,ammount,summary,start_date,end_date,grade,grade_date,evaluator_id,supervisor_id,organization_id,executive_id,program_id)
         VALUES ('$title', $ammount, '$summary', '$start_date', '$end_date', '$grade', '$grade_date', $evaluator,$supervisor,$organization,$executive,$program)";
   if(mysqli_query($conn, $ins_query)){
@@ -72,7 +78,7 @@ function set_deliverable(str) {
       $fp_quer .= "INSERT INTO field_project VALUES ($last_id, '$field');";
     }
     if(mysqli_multi_query($conn, $fp_quer)){
-      echo '<script>alert("Fields succesfully inserted!")</script>';
+    //  echo '<script>alert("Fields succesfully inserted!")</script>';
     }
     else{
       echo '<script>alert("There was a problem with sci-fields!")</script>';
@@ -163,7 +169,7 @@ else{
     <input type="date" name="grade_date" value="<?php echo date('Y-m-d'); ?>">
     <br><i><small>Note that grade date must be before start date </small></i>
     <br><br>
-    Select one or more scientific fields:<br>
+    Select one or more scientific fields(*):<br>
     <select name="fields[]" multiple>
       <?php
         $conn = OpenCon();
@@ -178,7 +184,7 @@ else{
         ?>
     </select>
     <br><br>
-    Executive:<br>
+    Executive *:<br>
     <select name="executive">
       <option value=""> Select executive </option>
       <?php
@@ -194,7 +200,7 @@ else{
         ?>
     </select>
     <br><br>
-    Select Program:<br>
+    Select Program *:<br>
     <select name="program">
       <option value=""> Select program </option>
       <?php
