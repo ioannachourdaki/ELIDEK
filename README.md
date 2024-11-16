@@ -1,29 +1,26 @@
-# ΕΛΙΔΕΚ
-Εξαμηνιαία εργασία στο πλαίσιο του μαθήματος 'Βάσεις Δεδομένων', ΡΟΗ Λ - ΣΗΜΜΥ ΕΜΠ 6ο εξάμηνο 
+# ELIDEK
+This repository contains the project developed for the Databases Course at ECE NTUA.
+
 ## Dependencies:
 
     • Apache Web Server
     • MySQL 
     • PHP
 
-## Αναλυτικά βήματα εγκατάστασης εφαρμογής
+## Detailed application installation steps
 
-Η εφαρμογή αναπτύχθηκε για λειτουργικό σύστημα Linux (ο χρήστης πρέπει να έχει sudo privileges)
+The application is developed for **Linux OS** (user must have *sudo* privileges)
 
-#### Aναλυτικές οδηγίες εγκατάστασης του LAMP stack μπορείτε να βρείτε στον παρακάτω σύνδεσμο:
+#### Comprehensive installation instructions for setting up the LAMP stack are available at the following link:
 https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-ubuntu-20-04
  
-#### Εγκατάσταση της βάσης
-To αρχείo ELIDEK_DDL.sql περιέχει όλο τον κώδικα για τη δημιουργία του σχήματος και των απαραίτητων περιορισμών (tables, triggers, views, καθώς και indexes), ενώ η εισαγωγή των δεδομένων θα γίνει με χρήση του αρχείου dummy_data.sql. Και τα δύο αυτά αρχεία βρίσκονται στον φάκελο elidek_db.
-Μετά τη λήψη των παραπάνω αρχείων (υποθέτουμε ότι τα αρχεία αποθηκεύονται στο directory ‘db_directory’), εκτελούμε τις παρακάτω εντολές στο terminal, αφού πρώτα ανοίξουμε τη mysql:
-
+#### Database installation
+The **ELIDEK_DDL.sql** file contains the complete code to create the schema and define the necessary constraints, including *tables*, *triggers*, *views*, and *indexes*. The data will be populated using the **dummy_data.sql** file. Both files can be found in the `elidek_db` folder.
+After downloading the files (assuming they are stored in the `db_directory`), open **MySQL** and then execute the following commands in the terminal:
 ```
 mysql> source db_directory/ELIDEK_DDL.sql
 mysql> source db_directory/dummy_data.sql
 ```
 
 #### Apache localhost configuration
-
-Τελευταίο βήμα πριν την εκτέλεση της εφαρμογής είναι η αντιγραφή όλων των αρχείων του φακέλου web_app (github repository) στο directory ```/var/www/html``` Εάν υπάρχει αρχείο index.php στο συγκεκριμένο directory πριν την αντιγραφή, πρέπει να φροντίσουμε να το αντικαταστήσουμε με το καινούριο index.php (Αν υπάρχει αρχείο index.html πρέπει να απομακρυνθεί από το συγκεκριμένο directory)
-
-
+The final step before running the application is to copy all files from the `web_app` folder (from the GitHub repository) to the ```/var/www/html``` directory. If an **index.php** file already exists in that directory, it should be replaced with the new **index.php** file. Additionally, if there is an index.html file in the directory, it must be removed.
