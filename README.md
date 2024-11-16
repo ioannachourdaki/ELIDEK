@@ -1,7 +1,7 @@
 # ELIDEK
 This repository contains the project developed for the Databases Course at ECE NTUA.
 
-## Dependencies:
+## Dependencies
 
     • Apache Web Server
     • MySQL 
